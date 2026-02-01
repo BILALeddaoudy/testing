@@ -1,21 +1,55 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #f9fbff);
   padding: 20px;
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 section {
-  background: white;
-  padding: 15px;
-  margin: 15px 0;
-  border-radius: 8px;
+  margin-bottom: 40px;
 }
 
+section h2 {
+  margin-bottom: 15px;
+}
+
+/* GRID */
+#lessons, #exercises, #news {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+/* CARD */
 .post {
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.post:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.post h4 {
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.post p {
+  color: #555;
+  font-size: 14px;
 }
